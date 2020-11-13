@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/TeamBolton/Alysa-FrontEndCapstone
+  - https://github.com/TeamBolton/Abessia-FrontEndCapstone
+  - https://github.com/TeamBolton/Moe-FrontEndCapstone
+  - https://github.com/TeamBolton/Zach-FrontEndCapstone
 
 ## Table of Contents
 
@@ -28,6 +28,10 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ## Development
 
+Database of choice - MySQL
+
+React using Style Components or CSS Modules
+
 ### Installing Dependencies
 
 From within the root directory:
@@ -36,4 +40,13 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+Express (server)
+Webpack (production)
+  Webpack-dev (development)
+Enzyme (testing for React)
+Jest (test)
+Travis CI / Circle CI (Continuous Integration)
+
+faker (generate fake data)
+
 
