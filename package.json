@@ -9,7 +9,9 @@
   },
   "scripts": {
     "build": "webpack -d --watch",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "database": "mysql -u root -p < schema.sql",
+    "seed": "node database/seed.js"
   },
   "dependencies": {
     "axios": "^0.21.0",

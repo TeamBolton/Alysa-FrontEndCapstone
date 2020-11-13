@@ -29,7 +29,7 @@ function generateTypes() {
     if (err) {
       throw err;
     } else {
-      console.log('ADDED into db');
+      console.log('Product types added into the db');
     }
   })
 
@@ -57,7 +57,7 @@ function generateCategories() {
     if (err) {
       throw err;
     } else {
-      console.log('categories added in db!');
+      console.log('Categories added in the db');
     }
   })
 }
