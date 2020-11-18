@@ -1,0 +1,29 @@
+h2 {
+  padding-left: 20px;
+  font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.slider {
+  width: 2300px;
+  height: 300px;
+  overflow-x: hidden;
+}
+
+.slider > ul {
+  position: relative;
+  list-style: none;
+  width: 1300px;
+  height: 300px;
+
+}
+
+li {
+  float: left;
+  width: 200px;
+  height: 300px;
+  font-family: Graphik,"Helvetica Neue",sans-serif;
+
+}
+

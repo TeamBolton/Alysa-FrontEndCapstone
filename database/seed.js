@@ -5,11 +5,6 @@ const {connection} = require('./db.js');
 function generateTypes() {
 
   function getProducts() {
-    // var products = [];
-    // for (var i = 0; i < 30; i++) {
-    //   products.push([faker.commerce.product()]);
-    // }
-    // return products;
 
     var set = new Set();
     while (set.size < 5) {
@@ -22,8 +17,6 @@ function generateTypes() {
   }
 
   var values = getProducts();
-  // console.log(values);
-
   var queryStr = 'INSERT INTO types ( name ) values ?';
   connection.query(queryStr, [values], function(err) {
     if (err) {
@@ -51,7 +44,6 @@ function generateCategories() {
   }
 
   var values = getCategories();
-  // console.log(values);
   var queryStr = 'INSERT INTO categories (name) values ? ';
   connection.query(queryStr, [values], function(err) {
     if (err) {
@@ -64,7 +56,6 @@ function generateCategories() {
 generateCategories();
 
 //Table recommended
-// create a set/array of 25, then repeat it 4 times to generate 100 records
 function generateRecommended () {
 
   function subset () {
@@ -78,7 +69,7 @@ function generateRecommended () {
       var name = faker.commerce.productName();
       var ratings = (Math.random() * 5.0).toFixed(1);
       var reviews = Math.floor(Math.random() * 200);
-      var price = faker.commerce.price();
+      var price = (Math.random() * 1000).toFixed(2);
 
       products.push([type_id, category_id, image_url, brand, name, ratings, reviews, price]);
     }
@@ -87,7 +78,7 @@ function generateRecommended () {
   }
 
   var values = subset();
-  // console.log(values);
+
   var queryStr = 'INSERT INTO recommended (type_id, category_id, image_url, brand, name, ratings, reviews, price) values ?';
   connection.query(queryStr, [values], function(err) {
     if (err) {
@@ -98,3 +89,25 @@ function generateRecommended () {
   })
 }
 generateRecommended();
+
+/** faker.()
+ *
+ * table types:
+ * (id - no need to generate, will automatically increment)
+ * name of product types (boots, jackets, etc) : commerce.product (pizza, towel, car, ...)
+ *
+ * table categories:
+ * (id - no need)
+ * name of categories (camping, hiking, clothing, etc) : commerce.department (games, outdoor, movies...)
+ *
+ * table recommended:
+ * (id - no need)
+ * (type_id from table types)
+ * (category_id from category table)
+ * image_url : image.nature
+ * brand : company.companyName
+ * name : commerce.productName
+ * ratings (3.5, 2.0, 5.0...) :
+ * reviews (10, 25, 30)
+ * price (30.00, 400.00) : commerce.price
+ */
