@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import ProductList from './productList.jsx';
+import Slider from './Slider.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -29,14 +29,23 @@ class App extends React.Component {
   }
 
   render() {
+
     return (
-      <div className="slider">
-        <h2>People also liked</h2>
-        <ul>
-          <ProductList products={this.state.products}/>
-        </ul>
+      <div>
+        <h2 style={styles.header}>People also liked</h2>
+        <div>
+          <Slider products={this.state.products}/>
+        </div>
       </div>
     )
+  }
+}
+
+const styles = {
+  header: {
+    fontFamily: 'Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif',
+    fontSize: '20px',
+    fontWeight: 'normal'
   }
 }
 
