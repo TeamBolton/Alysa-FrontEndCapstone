@@ -27,7 +27,8 @@ const styles = {
     fontSize: '13px',
     color: 'rgb(41, 41, 41)',
     marginTop: '5px',
-    fontWeight: '300'
+    fontWeight: '300',
+    width: '130px'
   },
 
   product_name: {
@@ -37,11 +38,14 @@ const styles = {
   },
 
   reviews: {
+    display: 'inline-block',
     fontSize: '13px',
     color: 'rgb(41, 41, 41)',
     marginBottom: '5px',
-    marginLeft: '100px',
-    fontWeight: '330'
+    // marginLeft: '100px',
+    fontWeight: '330',
+    width: '40px',
+
   },
 
   product_price: {

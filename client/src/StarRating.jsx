@@ -10,7 +10,7 @@ class StarRating extends React.Component {
   }
 
   componentDidMount() {
-    console.log('starRating', this.props.ratings);
+    // console.log('starRating', this.props.ratings);
     const stars = 5;
     const starPercentage = (this.props.ratings / stars) * 100;
     const roundedPercentage = Math.round(starPercentage);
@@ -27,7 +27,7 @@ class StarRating extends React.Component {
 
 
   render () {
-    console.log('render stars');
+    // console.log('render stars');
     return (
       <div className="stars-outer">
         <div className="stars-inner" id={this.props.index}></div>
