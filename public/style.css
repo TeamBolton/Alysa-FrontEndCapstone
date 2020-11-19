@@ -1,29 +1,23 @@
-/* h2 {
-  padding-left: 20px;
-  font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: normal;
-  font-size: 20px;
-}
-
-.slider {
-  width: 1300px;
-  height: 300px;
-
-}
-
-.slider > ul {
+.stars-outer {
+  display: inline-block;
   position: relative;
-  list-style: none;
-  width: 1300px;
-  height: 300px;
 
 }
 
-li {
-  float: left;
-  width: 200px;
-  height: 300px;
-  font-family: Graphik,"Helvetica Neue",sans-serif;
-
+.stars-outer::before {
+  content: "☆☆☆☆☆";
 }
- */
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-inner::before {
+  content: "★★★★★";
+  color: rgb(235, 201, 11);
+}

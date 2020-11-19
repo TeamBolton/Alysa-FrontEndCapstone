@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      products: []
+      products: [],
     };
 
   }
@@ -23,9 +23,17 @@ class App extends React.Component {
     }.bind(this));
   }
 
+  updateDimensions () {
+    this.setState({
+      width: window.innerWidth,
+      height: window.innerHeight
+    })
+  }
+
   componentDidMount() {
     this.getProducts();
     console.log('componentDidMount');
+    // window.addEventListener('resize', this.updateDimensions)
   }
 
   render() {
@@ -45,7 +53,9 @@ const styles = {
   header: {
     fontFamily: 'Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif',
     fontSize: '20px',
-    fontWeight: 'normal'
+    fontWeight: '450',
+    fontStyle: 'normal'
+
   }
 }
 
