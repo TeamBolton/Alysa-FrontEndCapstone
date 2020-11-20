@@ -27,6 +27,9 @@ class App extends React.Component {
   componentDidMount() {
     console.log('componentDidMount');
 
+    const path = window.location.pathname;
+    const product_id = path.slice(1);
+    console.log('id', product_id);
     this.getProducts();
 
   }
