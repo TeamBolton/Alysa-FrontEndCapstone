@@ -1,60 +1,6 @@
 const faker = require('faker');
 const {connection} = require('./db.js');
 
-// Table types
-function generateTypes() {
-
-  function getProducts() {
-
-    var set = new Set();
-    while (set.size < 5) {
-      set.add(faker.commerce.product());
-    }
-
-    var arr = Array.from(set);
-    return arr.map(type => [type]);
-
-  }
-
-  var values = getProducts();
-  var queryStr = 'INSERT INTO types ( name ) values ?';
-  connection.query(queryStr, [values], function(err) {
-    if (err) {
-      throw err;
-    } else {
-      console.log('Product types added into the db');
-    }
-  })
-
-}
-generateTypes();
-
-// Table categories
-function generateCategories() {
-
-  function getCategories() {
-
-    var set = new Set();
-    while (set.size < 5) {
-      set.add(faker.commerce.department());
-    }
-
-    var arr = Array.from(set);
-    return arr.map(category => [category]);
-  }
-
-  var values = getCategories();
-  var queryStr = 'INSERT INTO categories (name) values ? ';
-  connection.query(queryStr, [values], function(err) {
-    if (err) {
-      throw err;
-    } else {
-      console.log('Categories added in the db');
-    }
-  })
-}
-generateCategories();
-
 //Table recommended
 function generateRecommended () {
 

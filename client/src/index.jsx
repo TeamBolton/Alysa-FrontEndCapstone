@@ -14,6 +14,7 @@ class App extends React.Component {
 
   getProducts () {
     console.log('getProducts ran');
+
     $.get('/api/recommended', function(data, status) {
 
       this.setState({
@@ -23,17 +24,11 @@ class App extends React.Component {
     }.bind(this));
   }
 
-  updateDimensions () {
-    this.setState({
-      width: window.innerWidth,
-      height: window.innerHeight
-    })
-  }
-
   componentDidMount() {
-    this.getProducts();
     console.log('componentDidMount');
-    // window.addEventListener('resize', this.updateDimensions)
+
+    this.getProducts();
+
   }
 
   render() {
