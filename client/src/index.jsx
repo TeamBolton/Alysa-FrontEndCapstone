@@ -12,10 +12,10 @@ class App extends React.Component {
 
   }
 
-  getProducts () {
+  getProducts (id) {
     console.log('getProducts ran');
 
-    $.get('/api/recommended', function(data, status) {
+    $.get(`/api/recommended/${id}`, function(data, status) {
 
       this.setState({
         products: data
@@ -27,7 +27,10 @@ class App extends React.Component {
   componentDidMount() {
     console.log('componentDidMount');
 
-    this.getProducts();
+    const path = window.location.pathname;
+    const product_id = path.slice(1);
+    console.log('id', product_id);
+    this.getProducts(product_id);
 
   }
 

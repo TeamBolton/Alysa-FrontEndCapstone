@@ -14,9 +14,9 @@ const connection = mysql.createConnection({
 //   }
 // })
 
-var getRecommended = function (callback) {
+var getRecommended = function (id, callback) {
 
-  var queryStr = 'SELECT id, type_id, category_id, image_url, brand, name, ratings, reviews, price FROM recommended LIMIT 11';
+  var queryStr = `SELECT * FROM RECOMMENDED WHERE TYPE_ID = (SELECT TYPE_ID FROM RECOMMENDED WHERE ID = ${id}) LIMIT 11`;
   connection.query(queryStr, function(err, result, fields) {
     if (err) {
       throw err;

@@ -11,21 +11,23 @@ it("Get request to '/api/recommended", async () => {
   const response = await request.get('/api/recommended');
 
   expect(response.status).toBe(200);
+  expect(response.body.length).toBe(11);
+  expect(Array.isArray(response.body)).toBe(true);
   // done();
 });
 
-beforeAll(async () => {
-  var con = mysql.createConnection({
-    host: "localhost",
-    user: "test",
-    password: "test"
-  });
+// beforeAll(async () => {
+//   var con = mysql.createConnection({
+//     host: "localhost",
+//     user: "test",
+//     password: "test"
+//   });
 
-  con.connect(function(err) {
-    if (err) {
-      console.log(err);
-    }
-    console.log("connected!");
-
-  })
-});
+//   con.connect(function(err) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log("connected!");
+//     }
+//   })
+// });
