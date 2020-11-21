@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const {getRecommended} = require('../database/db.js');
 
 app.use('/:product_id', express.static('public'));
+// app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
