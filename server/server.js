@@ -3,13 +3,14 @@ const app = express();
 const bodyParser = require('body-parser');
 const {getRecommended} = require('../database/db.js');
 
-app.use(express.static('public'));
+app.use('/:product_id', express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/api/recommended', function(req, res) {
-
-  getRecommended(function(err, records) {
+app.get('/api/recommended/:product_id', function(req, res) {
+  console.log(req.params);
+  var id = req.params.product_id;
+  getRecommended(id, function(err, records) {
     if (err) {
       throw err;
     } else {
