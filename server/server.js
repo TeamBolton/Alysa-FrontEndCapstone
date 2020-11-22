@@ -2,11 +2,18 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const {getRecommended} = require('../database/db.js');
+const path = require('path');
 
-app.use('/:product_id', express.static('public'));
-// app.use(express.static('public'));
+app.get('/bundle.js/', function(req, res) {
+  res.sendFile(path.join(__dirname, '../public/bundle.js'));
+})
+
+// app.use('/:product_id', express.static('public'));
+// app.use('/bundle.js', express.static('/public'));
+app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
 
 app.get('/api/recommended/:product_id', function(req, res) {
   console.log(req.params);
