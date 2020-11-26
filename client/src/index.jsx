@@ -57,5 +57,5 @@ const styles = {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('service'));
 

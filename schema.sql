@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS rewhy;
+DROP DATABASE IF EXISTS rewhy_rec;
 
-CREATE DATABASE rewhy;
+CREATE DATABASE rewhy_rec;
 
-USE rewhy;
+USE rewhy_rec;
 
 -- DROP TABLE IF EXISTS types, categories, recommended;
 
