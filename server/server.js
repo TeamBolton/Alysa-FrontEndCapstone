@@ -8,7 +8,9 @@ app.get('/bundle.js/', function(req, res) {
   res.sendFile(path.join(__dirname, '../public/bundle.js'));
 })
 
-// app.use('/:product_id', express.static('public'));
+// app.use(express.static(__dirname + '/../public'));
+
+app.use('/:product_id', express.static('public'));
 // app.use('/bundle.js', express.static('/public'));
 app.use(express.static('public'));
 app.use(bodyParser.json());
