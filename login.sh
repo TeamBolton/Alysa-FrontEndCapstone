@@ -1,0 +1,1 @@
+ssh -i "/Users/alysashin/Desktop/FEC/Alysa-FrontEndCapstone/myService.pem" ubuntu@ec2-3-23-103-245.us-east-2.compute.amazonaws.com
