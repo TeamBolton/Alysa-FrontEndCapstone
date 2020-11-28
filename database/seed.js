@@ -25,12 +25,12 @@ function generateRecommended () {
 
   var values = subset();
 
-  var queryStr = 'INSERT INTO recommended (type_id, category_id, image_url, brand, name, ratings, reviews, price) values ?';
+  var queryStr = 'INSERT INTO RECOMMENDED (type_id, category_id, image_url, brand, name, ratings, reviews, price) values ?';
   connection.query(queryStr, [values], function(err) {
     if (err) {
       throw err;
     } else {
-      console.log('records added to the table recommended');
+      console.log('records added to the table RECOMMENDED');
     }
   })
 }

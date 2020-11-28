@@ -6,7 +6,7 @@ USE rewhy_rec;
 
 -- DROP TABLE IF EXISTS types, categories, recommended;
 
-CREATE TABLE recommended (
+CREATE TABLE RECOMMENDED (
   id int NOT NULL AUTO_INCREMENT,
   type_id int,
   category_id int,
