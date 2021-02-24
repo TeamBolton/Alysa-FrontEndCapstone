@@ -2,6 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Slider from './Slider.jsx';
+import styled from 'styled-components';
+
+const Header = styled.h2`
+  fontFamily: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  fontSize: 20px;
+  fontWeight: 450;
+  fontStyle: normal;
+`;
 
 class App extends React.Component {
   constructor() {
@@ -38,22 +46,12 @@ class App extends React.Component {
 
     return (
       <div>
-        <h2 style={styles.header}>People also liked</h2>
+        <Header>People also liked</Header>
         <div>
           <Slider products={this.state.products}/>
         </div>
       </div>
     )
-  }
-}
-
-const styles = {
-  header: {
-    fontFamily: 'Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif',
-    fontSize: '20px',
-    fontWeight: '450',
-    fontStyle: 'normal'
-
   }
 }
 

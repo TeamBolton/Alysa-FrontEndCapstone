@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Product from './Product.jsx';
+import { Viewport, ProductContainer, LeftButton, RightButton } from './SliderStyle.jsx';
 
 class Slider extends React.Component {
   constructor(props) {
@@ -43,11 +44,11 @@ class Slider extends React.Component {
   render () {
 
     return (
-      <div className="view-port" style={styles.view_port}>
-        { this.state.left_most === 0 && <button onClick={this.handle_right} onMouseOver={this.bigger_shadow} onMouseLeave={this.normal_shadow} style={styles.right_button}>{">"}</button>}
-        { this.state.left_most === 5 && <button onClick={this.handle_left} onMouseOver={this.bigger_shadow} onMouseLeave={this.normal_shadow} style={styles.left_button}>{"<"}</button>}
-        <div ref={ref_id => this.product_container = ref_id} className="product-container" style={styles.product_container}>
-          {this.props.products.map((product, index) => {
+      <Viewport>
+      { this.state.left_most === 0 && <RightButton onClick={this.handle_right} onMouseOver={this.bigger_shadow} onMouseLeave={this.normal_shadow}>{">"}</RightButton>}
+      { this.state.left_most === 5 && <LeftButton onClick={this.handle_left} onMouseOver={this.bigger_shadow} onMouseLeave={this.normal_shadow}>{"<"}</LeftButton>}
+        <ProductContainer ref={ref_id => this.product_container = ref_id}>
+        {this.props.products.map((product, index) => {
             return (
               <Product
                 index={index}
@@ -60,53 +61,9 @@ class Slider extends React.Component {
               /> )
             }
           )}
-        </div>
-    </div>
-    )
+        </ProductContainer>
+      </Viewport>    )
   }
-}
-
-const styles = {
-  view_port: {
-    position: 'relative',
-    paddingLeft: '20px',
-    width: '1020px',
-    height: '300px',
-    // backgroundColor: 'blue',
-    overflow: 'hidden'
-  },
-
-  product_container: {
-    display: 'flex',
-    flexDirection: 'row',
-    width: 'fit-content',
-    paddingTop: '10px',
-    paddingLeft: '10px'
-  },
-
-  left_button: {
-    position: 'absolute',
-    borderRadius: '90%',
-    float: 'left',
-    zIndex: 1,
-    width: '35px',
-    height: '35px',
-    marginTop: '115px',
-    border: 'none',
-    boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19)',
-  },
-
-  right_button: {
-    position: 'absolute',
-    right: '20px',
-    borderRadius: '90%',
-    width: '35px',
-    height: '35px',
-    zIndex: 1,
-    marginTop: '115px',
-    border: 'none',
-    boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19)',
-  },
 }
 
 export default Slider;

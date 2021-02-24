@@ -1,37 +1,50 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
+
+const StarsOuter = styled.div`
+  display: block;
+  position: relative;
+  float: left;
+  margin-right: 5px;
+
+  &::before {
+    content: "☆☆☆☆☆";
+  }
+`;
+
+const StarsInner = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 0;
+
+  &::before {
+    content: "★★★★★";
+    color: rgb(235, 201, 11);
+  }
+`;
 
 class StarRating extends React.Component {
 
   constructor(props) {
     super(props);
-    //this.props.ratings
-    //this.props.index
   }
 
   componentDidMount() {
-    // console.log('starRating', this.props.ratings);
     const stars = 5;
     const starPercentage = (this.props.ratings / stars) * 100;
     const roundedPercentage = Math.round(starPercentage);
-    // var arr = document.getElementsByClassName('.stars-inner');
-    // console.log(arr);
-    // document.querySelector('stars-inner').style.width = `${roundedPercentage}%`;
     document.getElementById(`${this.props.index}`).style.width = `${roundedPercentage}%`;
-    // var ratings = document.querySelectorAll(".stars-inner");
-    // for (var i = 0; i < ratings.length; i ++) {
-    //   ratings[i].style.width = `${roundedPercentage}%`;
-    // }
-
   }
 
 
   render () {
-    // console.log('render stars');
     return (
-      <div className="stars-outer">
-        <div className="stars-inner" id={this.props.index}></div>
-      </div>
+      <StarsOuter>
+        <StarsInner id={this.props.index}></StarsInner>
+      </StarsOuter>
     )
   }
 
