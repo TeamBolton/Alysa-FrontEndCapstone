@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import StarRating from './StarRating.jsx';
 import styled from 'styled-components';
 
-
 const ProductContainer = styled.div`
   width: 130px;
   height: 300px;
@@ -35,8 +34,8 @@ const Reviews = styled.div`
   width: 40px;
 `;
 
-const ProductPrice = styled.div`
-  fontSize: 14px;
+export const ProductPrice = styled.div`
+  font-size: 14px;
   color: rgb(41, 41, 41);
   font-weight: 330;
 `;
@@ -73,6 +72,5 @@ const Product = ({index, brand, image_url, name, price, reviews, ratings}) => {
 
   )
 }
-
 
 export default Product;

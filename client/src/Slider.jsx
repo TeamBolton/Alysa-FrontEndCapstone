@@ -48,7 +48,7 @@ class Slider extends React.Component {
       { this.state.left_most === 0 && <RightButton onClick={this.handle_right} onMouseOver={this.bigger_shadow} onMouseLeave={this.normal_shadow}>{">"}</RightButton>}
       { this.state.left_most === 5 && <LeftButton onClick={this.handle_left} onMouseOver={this.bigger_shadow} onMouseLeave={this.normal_shadow}>{"<"}</LeftButton>}
         <ProductContainer ref={ref_id => this.product_container = ref_id}>
-        {this.props.products.map((product, index) => {
+        {this.props.products && this.props.products.map((product, index) => {
             return (
               <Product
                 index={index}
