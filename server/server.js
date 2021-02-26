@@ -3,6 +3,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const {getRecommended} = require('../database/db.js');
 const path = require('path');
+const compression = require('compression');
+
+app.use(compression());
 
 app.get('/bundle.js/', function(req, res) {
   res.sendFile(path.join(__dirname, '../public/bundle.js'));
